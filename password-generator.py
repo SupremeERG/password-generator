@@ -10,7 +10,7 @@ crack_difficulty = input("How difficult would you like this password to be to cr
 if crack_difficulty.lower() == "hard":
     password_stuff = small + numbers + special + large
 elif crack_difficulty.lower() == "medium":
-    password_stuff = small + "_" + large + numbers
+    password_stuff = small + numbers + large
 elif crack_difficulty.lower() == "low":
     password_stuff = small + numbers
 
@@ -28,7 +28,12 @@ else:
             print("\nFeeling insecure about your new password? Test it on https://www.my1login.com/resources/password-strength-test/")
             exit()
         while length<password_length:
-            password = password + password_stuff[randint(0, len(password_stuff)-1)]
+            if crack_difficulty.lower() == "medium":
+                password = password + password_stuff[randint(0, len(password_stuff)-1)]
+                if length == password_length - 1:
+                    password = password + "*!$"[randint(0, 2)]
+            else:
+                password = password + password_stuff[randint(0, len(password_stuff)-1)]
             length += 1
         print(f"Generated password: {password}")
         redo(times - 1)
