@@ -13,6 +13,8 @@ elif crack_difficulty.lower() == "medium":
     password_stuff = small + numbers + large
 elif crack_difficulty.lower() == "low":
     password_stuff = small + numbers
+else:
+    password_stuff = small + numbers + special + large
 
 password_length = int(input("Enter the length of the password >> "))
 #password = ""
