@@ -27,7 +27,7 @@ else:
         password = ""
         length = 0
         if times == 0:
-            print("\nFeeling insecure about your new password? Test it on https://www.my1login.com/resources/password-strength-test/")
+            print("\nFeeling insecure about your new password? Test it!\nhttps://www.expressvpn.com/password-generator/\nhttps://www.my1login.com/resources/password-strength-test/")
             exit()
         while length<password_length:
             if crack_difficulty.lower() == "medium":
