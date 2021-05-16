@@ -41,7 +41,7 @@ else:
         redo(times - 1)
     
     generate_amt = int(input("How many passwords would you like to generate >> "))
-    if generate_amt > 5 or generate_amt < 1:
+    if generate_amt > 10 or generate_amt < 1:
         print("You must generate 1-5 passwords")
     else:
         print("\tGENERATED PASSWORDS\t\n-------------------------------------")
